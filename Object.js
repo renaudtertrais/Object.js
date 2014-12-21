@@ -1,4 +1,6 @@
 (function(){
+  
+  // Need extend method of jQuery. If jQuery not loaded, create a jQuery ultra-light version
   if( !window.jQuery ){
     jQuery = {
       extend : function() {
@@ -94,7 +96,7 @@
     };
   }
   
-
+  // extend Object prototype with an attribute and a method
   Object.prototype = jQuery.extend(Object.prototype,{
     Parent : null,
     parent : function(){
@@ -109,7 +111,7 @@
     } 
   });
   
-  
+  // add a static method to Object to be able to extend the class
   Object.extend = function( proto ){
     var child = function(){
       this.construct.apply(this,arguments);
