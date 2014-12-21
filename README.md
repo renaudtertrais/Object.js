@@ -15,12 +15,12 @@ Actually all the futur classes will have thoses methodes and attributes.
 ## Create a class
 
 Use :
-```
+```javascript
 var MyClass = ParentClass.extend( prototype );
 ```
 
 Example : 
-```
+```javascript
 var Simpson = Object.extend({
   construct : function( name ){
     this.name = name;
@@ -37,7 +37,7 @@ alert( homer.sayHello() ); // Hello I am Homer Simpson!
 
 ## Access to parent class
 Use (inside the class) :
-```
+```javascript
 // attribute
 this.Parent.myVar ;
 
@@ -52,7 +52,7 @@ this.parent('myMethod', param1 , ...);
 ```
 
 Example :
-```
+```javascript
 var SimpsonChild = Simpson.extend({
   construct : function( name , age ){
     this.name = age;
