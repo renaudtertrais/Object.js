@@ -38,7 +38,7 @@ alert( homer.sayHello() ); // Hello I am Homer Simpson!
 ## Access to parent class
 Use (inside the class) :
 ```
-// atribute
+// attribute
 this.Parent.myVar ;
 
 // GrandParent attribute
