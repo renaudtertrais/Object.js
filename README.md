@@ -40,10 +40,13 @@ Use (inside the class) :
 ```
 // atribute
 this.Parent.myVar ;
+
 // GrandParent attribute
 this.Parent.Parent.myVar ;
+
 // call parent method via Parent
 this.Parent.myMethod.call(this, param1 , ... );
+
 // or easier with .parent()
 this.parent('myMethod', param1 , ...);
 ```
@@ -53,6 +56,7 @@ Example :
 var SimpsonChild = Simpson.extend({
   construct : function( name , age ){
     this.name = age;
+    
     // call parent constructor
     this.parent('construct',name);
   },
