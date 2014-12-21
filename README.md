@@ -22,15 +22,48 @@ var MyClass = ParentClass.extend( prototype );
 Example : 
 ```
 var Simpson = Object.extend({
-  construct : fucntion( name ){
+  construct : function( name ){
     this.name = name;
   },
   sayHello : function(){
-    alert('Hello I am ' + name + ' Simpson!');
+    return 'Hello I am ' + name + ' Simpson!';
   }
 });
 
 var homer = new Simpson('Homer');
 
-homer.sayHello();
+alert( homer.sayHello() ); // Hello I am Homer Simpson!
 ```
+
+## Access to parent class
+Use (inside the class) :
+```
+// atribute
+this.Parent.myVar ;
+// GrandParent attribute
+this.Parent.Parent.myVar ;
+// call parent method via Parent
+this.Parent.myMethod.call(this, param1 , ... );
+// or easier with .parent()
+this.parent('myMethod', param1 , ...);
+```
+
+Example :
+```
+var SimpsonChild = Simpson.extend({
+  construct : function( name , age ){
+    this.name = age;
+    // call parent constructor
+    this.parent('construct',name);
+  },
+  //  overriding parent class
+  sayHello : function(){
+    return this.parent('sayHello') + ' I am only ' + this.age + ' years old.';
+  }
+});
+
+var bart = new SimpsonChild('Bart',8);
+
+alert ( bart.sayHello() ); // Hello I am Bart Simpson! I am only 8 years old.
+```
+
