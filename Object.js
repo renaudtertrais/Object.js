@@ -92,7 +92,17 @@
 		    // If the function hasn't returned already, we're confident that
 		    // |obj| is a plain object, created by {} or constructed with new Object
 		    return true;
-	    }   
+	    },
+	    
+	    type: function( obj ) {
+		if ( obj == null ) {
+			return obj + "";
+		}
+		// Support: Android<4.0 (functionish RegExp)
+		return typeof obj === "object" || typeof obj === "function" ?
+			class2type[ toString.call(obj) ] || "object" :
+			typeof obj;
+	}
     };
   }
   
@@ -115,7 +125,9 @@
   Object.extend = function( proto ){
     proto = proto || {};
     var child = function(){
-      this.constructor.apply(this,arguments);
+    	if( typeof(this.constructor) === 'function'){
+    		this.constructor.apply(this,arguments);
+    	}
     };
     proto.Parent = this.prototype ;
     child.prototype  = jQuery.extend({},this.prototype, proto);
