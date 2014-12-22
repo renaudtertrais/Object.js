@@ -18,7 +18,7 @@
 
 
     // extend Object prototype with an attribute and a method
-    Object.prototype = jQuery.extend(Object.prototype, {
+    Object.prototype = extend(Object.prototype, {
         Parent: null,
         parent: function() {
             var args = Array.prototype.slice.call(arguments, 0);
@@ -41,7 +41,7 @@
             }
         };
         proto.Parent = this.prototype;
-        child.prototype = jQuery.extend({}, this.prototype, proto);
+        child.prototype = extend({}, this.prototype, proto);
         child.extend = Object.extend;
         return child;
     };
