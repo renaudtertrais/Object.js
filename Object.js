@@ -113,8 +113,9 @@
   
   // add a static method to Object to be able to extend the class
   Object.extend = function( proto ){
+    proto = proto || {};
     var child = function(){
-      this.construct.apply(this,arguments);
+      this.constructor.apply(this,arguments);
     };
     proto.Parent = this.prototype ;
     child.prototype  = jQuery.extend({},this.prototype, proto);
