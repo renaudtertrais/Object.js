@@ -21,9 +21,9 @@ var MyClass = ParentClass.extend( prototype );
 
 - `prototype` is obviously the  `prototype` of `MyClass` (i.e an object `{}` of methods). 
 - If you define a `constructor`, it will be call as the constructor of your class.
-- Even if the your `prototype` is empty, it contains `parent()`and `Parent` (see below).
+- Even if the `prototype` is empty, it contains `parent()`and `Parent` (see below).
 - Now `MyClass` can be extanded too.
-- You can pass an empty prototype and define methods after :
+- You can pass an empty prototype and define methods after.
 
 ```javascript
 var MyClass = ParentClass.extend( {} );
