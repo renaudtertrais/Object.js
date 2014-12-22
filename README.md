@@ -19,7 +19,7 @@ Use :
 var MyClass = ParentClass.extend( prototype );
 ```
 
-- `prototype` is obviously the  `prototype` of `MyClass`, i.e
+- `prototype` is obviously the  `prototype` of `MyClass` (i.e an object `{}` of methods). 
 - If you define a `constructor`, it will be call as the constructor of your class.
 - Even if the your `prototype` is empty, it contains `parent()`and `Parent` (see below).
 - Now `MyClass` can be extanded too.
